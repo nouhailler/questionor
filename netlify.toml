@@ -1,0 +1,30 @@
+# Configuration Netlify — La question du jour (site statique, sans build)
+
+[build]
+  publish = "app"
+  command = ""
+
+# Le service worker ne doit jamais être servi depuis un cache périmé,
+# sinon les mises à jour de l'app ne se propagent pas.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Idem pour la coquille HTML.
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Type MIME correct pour le manifeste.
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+
+# Assets versionnables : cache long (le SW gère la fraîcheur des données).
+[[headers]]
+  for = "/icons/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
