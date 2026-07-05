@@ -1,0 +1,10 @@
+# Archive source du handoff (redondante avec design_handoff_question_du_jour/)
+Question du jour enfant.zip
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+*~
+
+# Dépendances / build éventuels
+node_modules/

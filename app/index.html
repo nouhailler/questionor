@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>La question du jour</title>
+  <meta name="description" content="Une question par jour pour éveiller la curiosité des enfants, avec la réponse et une question pour papoter.">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#E8E0F2">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Question du jour">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-bg">
+    <main class="app" id="app" aria-live="polite">
+      <!-- Header -->
+      <header class="header">
+        <h1 class="header__title">La question du jour</h1>
+        <p class="header__date" id="todayLabel"></p>
+      </header>
+
+      <!-- Tabs -->
+      <nav class="tabs" role="tablist" aria-label="Vues">
+        <button class="tab is-active" id="tab-jour"    role="tab" data-tab="jour"    aria-selected="true">Aujourd'hui</button>
+        <button class="tab"           id="tab-passees" role="tab" data-tab="passees" aria-selected="false">Jours passés</button>
+        <button class="tab"           id="tab-favs"    role="tab" data-tab="favs"    aria-selected="false">Préférées</button>
+      </nav>
+
+      <!-- View container -->
+      <section class="view" id="view"></section>
+
+      <footer class="footer" id="footer"></footer>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
